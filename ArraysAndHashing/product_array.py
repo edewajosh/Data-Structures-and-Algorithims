@@ -21,13 +21,21 @@ import math
 
 def productExceptSelf(nums):
     ans = []
-    for i in range(len(nums)):
-        data = []
-        for j in range(len(nums)):
-            if j == i:
-                continue
-            data.append(nums[j])
-        ans.append(math.prod(data))
+    index = 0
+    current = nums[0]
+    for i in range(1, len(nums)+1):
+        # data = []
+        # for j in range(len(nums)):
+        #     if j == i:
+        #         continue
+        #     data.append(nums[j])
+        # ans.append(math.prod(data))
+        
+        # remove the second loop
+        current = nums.pop(index)
+        ans.append(math.prod(nums))
+        nums.insert(index, current)
+        index = i
     return ans
 
 if __name__ == '__main__':
