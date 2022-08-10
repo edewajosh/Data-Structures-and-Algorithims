@@ -12,11 +12,11 @@ class RemainingTime:
             return 0
         if len(self.file_size_downloaded) < self.last_items:
             average_of_last_items = sum(self.file_size_downloaded)/len(self.file_size_downloaded)
-            return math.ceil(self.file_size/average_of_last_items)
+            return int(math.ceil(self.file_size/average_of_last_items))
 
         else:
             average_of_last_items = sum(self.file_size_downloaded[-self.last_items:])/self.last_items
-            return math.ceil((self.file_size-sum(self.file_size_downloaded))/average_of_last_items)
+            return int(math.ceil((self.file_size-sum(self.file_size_downloaded))/average_of_last_items))
 
 if __name__ == '__main__':
     print("Downlaod time remaining estimate")
