@@ -28,11 +28,15 @@ class Solution:
     1 <= s.length <= 2 * 105
     s consists only of printable ASCII characters.
     """
-    def isPalindrome(self, s: str) -> bool:
-        if  len(s) == 0:
+
+    def __init__(self, s) -> None:
+        self.s = s
+
+    def isPalindrome(self) -> bool:
+        if  len(self.s) == 0:
             return True
         val = []
-        for i in s:
+        for i in self.s:
             if i.isdigit():
                 val.append(i)
             elif i.isalpha():
@@ -46,5 +50,5 @@ class Solution:
             return False
 
 if __name__ == '__main__':
-    sol = Solution()
-    print(sol.isPalindrome('0P'))
+    sol = Solution('0P')
+    print(sol.isPalindrome())
