@@ -6,12 +6,12 @@ class TestPalindrome(TestCase):
 
     def test_single_string(self):
         ans = Solution('Madam')
-        self.assertEquals(ans.isPalindrome(), True)
+        self.assertEqual(ans.isPalindrome(), True)
 
     def test_word(self):
         ans = Solution('A man, a plan, a canal: Panama')
-        self.assertEquals(ans.isPalindrome(), True)
+        self.assertEqual(ans.isPalindrome(), True)
 
     def test_non_palindrome(self):
         ans = Solution('palindrome')
-        self.assertEquals(ans.isPalindrome(), False)
+        self.assertEqual(ans.isPalindrome(), False)
